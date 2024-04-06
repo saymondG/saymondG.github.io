@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", ()=> {
     const botonHistorial = document.getElementById("botonHistorial");
 
+    //logica del boton de historial para esconder las demas secciones y abrir la correspondiente
     botonHistorial.addEventListener("click", (event) => {
         const secciones = Array.from(document.getElementsByClassName("seccionCitas"));
         secciones.forEach(seccion => {
@@ -12,6 +13,8 @@ document.addEventListener("DOMContentLoaded", ()=> {
     });
 });
 
+
+//en este metodo se realizan diferentes filtros para obtener la informacion correspondiente para observar en la tabla
 const cargarHistorial = () => {
     const historialTabla = document.getElementById('tabla-historial').getElementsByTagName('tbody')[0];
     const citas = JSON.parse(localStorage.getItem('citas'));

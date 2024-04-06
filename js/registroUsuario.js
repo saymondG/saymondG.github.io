@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
     const formulario = document.getElementById("formulario");
 
-
+    //evento al enviar el formulario se valida los datos y este se almacena
     formulario.addEventListener("submit", (event) => {
         event.preventDefault();
 
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
     });
 });
 
-
+//se obtienen los datos del formulario
 const obtenerDatosFormulario = () => {
     const cedula = document.getElementById("cedula").value.trim();
     const nombre = document.getElementById("nombre").value;
@@ -35,6 +35,8 @@ const obtenerDatosFormulario = () => {
     return { cedula, nombre, apellidos, celular, correo, contrasenna, confirmarContrasenna };
 };
 
+
+//validaciones para los datos del formulario
 const validarNombreApellidos = (nombre) => /^[A-Z][a-zA-Z]*$/.test(nombre);
 
 const validarCedula = (cedula) => /^(\d{2}-\d{4}-\d{4})$/.test(cedula);
@@ -47,6 +49,8 @@ const validarCorreo = (correo) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo);
 
 const validarConfirmacion = (contrasenna, confirmarContrasenna) => contrasenna === confirmarContrasenna;
 
+
+//verifica que la cedula no existe en el sistema
 const cedulaValida = (cedula) => {
     const usuariosJSON = localStorage.getItem('usuarios');
     var usuariosRecuperados = JSON.parse(usuariosJSON);
@@ -62,6 +66,7 @@ const cedulaValida = (cedula) => {
     }
 };
 
+//en caso de exito crea el ususario y lo ingresa al localstorge
 const manejarExito = (usuario) => {
     const usuariosJSON = localStorage.getItem('usuarios');
     var usuariosRecuperados = JSON.parse(usuariosJSON);
@@ -71,15 +76,18 @@ const manejarExito = (usuario) => {
     window.location.href = "../index.html";
 };
 
+//se encarga de encriptar la contrasenna
 const encriptar = (contrasenna) => {
     const codigo = { a: '#adc!', e: '#dfg!', i: '#ihj!', o: '#kln!', u: '#mno!' };
     return contrasenna.split('').map(letra => codigo[letra] || letra).reverse().join('');
 };
 
+//muestra una alerta en caso de error
 const manejarError = () => {
     alert("datos no son validos")
 };
 
+//limpia el formulario
 const limpiarCamposTexto = () => {
     const campos = document.querySelectorAll("#formulario input[type='email'], #fomrulario input[type='password']");
     campos.forEach((campo) => campo.value = "")

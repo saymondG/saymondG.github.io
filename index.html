@@ -7,34 +7,34 @@
         <link rel="stylesheet" type="text/css" href="css/estilo.css">
         <script src="js/main.js"></script>
         <script src="js/datos.js"></script>
+        <script src="js/footer.js"></script>
+        <script src="js/header.js"></script>
     </head>
     <body>
-        <header>
-            <iframe src="paginas/header.html" type="text/html"></iframe>
-        </header>
+        <header></header>
         <main>
             <div class="contenido">
                 <div class="carrusel">
-                    <div class="item-carrusel">
-                        <img src="img/medicina.png" style="width:100%">
-                        <p>Medicina General</p>
-                    </div>               
-                    <div class="item-carrusel">
-                        <img src="img/dermatologia.png" style="width:100%">
-                        <p>Dermatologia</p>
-                    </div>
-                    <div class="item-carrusel">
-                        <img src="img/oftalmologia.png" style="width:100%">
-                        <p>Oftalmologia</p>
-                    </div>               
-                    <div class="item-carrusel">
-                        <img src="img/pediatria.png" style="width:100%">
-                        <p>Pediatria</p>
-                    </div>
                     <a class="prev" onclick="carruselRotacion(-1)">&#10094;</a>
+                    <div class="item-carrusel">
+                        <p>Medicina General</p>
+                        <img src="img/medicina.png" style="width:100%">
+                    </div>               
+                    <div class="item-carrusel">
+                        <p>Dermatologia</p>
+                        <img src="img/dermatologia.png" style="width:100%">
+                    </div>
+                    <div class="item-carrusel">
+                        <p>Oftalmologia</p>
+                        <img src="img/oftalmologia.png" style="width:100%">
+                    </div>               
+                    <div class="item-carrusel">
+                        <p>Pediatria</p>
+                        <img src="img/pediatria.png" style="width:100%">
+                    </div>
                     <a class="next" onclick="carruselRotacion(1)">&#10095;</a>
                 </div>
-                <!-- <div class="descripcion-inicio">
+                <div class="descripcion-inicio">
                     <p>
                         En la Clínica Árbol de Seda, nuestro sistema de citas médicas ofrece 
                         una experiencia conveniente y centrada en el paciente. 
@@ -46,12 +46,10 @@
                         Nuestro equipo de atención al cliente está disponible para ayudar en cualquier etapa del proceso, 
                         garantizando un acceso rápido y eficiente a la atención médica necesaria.
                     </p>
-                </div> -->
+                </div>
             </div>
             
         </main>
-        <footer>
-            <iframe src="paginas/footer.html" type="text/html"></iframe>
-        </footer>
+        <footer></footer>
     </body>
 </html>

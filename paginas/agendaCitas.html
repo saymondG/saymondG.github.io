@@ -9,11 +9,11 @@
         <script src="../js/historial.js"></script>
         <script src="../js/calendario.js"></script>
         <script src="../js/programarCitas.js"></script>
+        <script src="../js/header.js"></script>
+        <script src="../js/footer.js"></script>
     </head>
     <body>
-        <header>
-            <iframe src="header.html" type="text/html"></iframe>
-        </header>
+        <header></header>
         <main>
             <div class="contenido agendar-citas">
                 <div class="menu-citas">
@@ -26,8 +26,8 @@
                     <div id="bienvenida" class="seccionCitas">
                         <h1>Bienvenido al menu de gestion de citas</h1>
                     </div>
-                    <div id="programacionCitas" class="seccionCitas">
-                        <form id="formulario" method="post">
+                    <div id="programacionCitas" class="seccionCitas oculto">
+                        <form id="formulario" class="formulario" method="post">
                             <h1>Programacion de citas</h1>
                             <h3>Especialidad</h3>
                             <select id="detalles-especialidad" onchange="cargarMedicos()"></select>
@@ -50,7 +50,7 @@
                             </div> 
                         </form>
                     </div>
-                    <div id="calendario" class="seccionCitas">
+                    <div id="calendario" class="seccionCitas oculto">
                         <h1>Calendario</h1>
                         <table id="calendario-tabla">
                             <thead>
@@ -66,8 +66,10 @@
                             </thead>
                             <tbody></tbody>
                         </table>
+                        <div id="citas"></div>
+                        <div id="citas-modal"></div>
                     </div>
-                    <div id="historial" class="seccionCitas">
+                    <div id="historial" class="seccionCitas oculto">
                         <h1>Hisotrial</h1>
                         <table id="tabla-historial">
                             <thead>
@@ -84,12 +86,9 @@
                             <tbody></tbody>
                         </table>
                     </div>
-                    <div id="confirmacion" class="seccionCitas"><h1>Confirmacion</h1></div>
                 </div>
             </div>
         </main>
-        <footer>
-            <iframe src="footer.html" type="text/html"></iframe>
-        </footer>
+        <footer></footer>
     </body>
 </html>

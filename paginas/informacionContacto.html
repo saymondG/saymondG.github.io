@@ -6,13 +6,13 @@
         <title>Clinica Arbol de Seda</title>
         <link rel="stylesheet" type="text/css" href="../css/estilo.css">
         <script src="../js/informacionContacto.js"></script>
+        <script src="../js/header.js"></script>
+        <script src="../js/footer.js"></script>
     </head>
     <body>
-        <header>
-            <iframe src="header.html" type="text/html"></iframe>
-        </header>
+        <header></header>
         <main>
-            <div class="contenido">
+            <div class="contenido informacion-contacto">
                 <div class="contacto">
                     <h1>Contactanos</h1>
                     <p>Detalles de Contacto:</p>
@@ -30,7 +30,8 @@
                     </iframe>
                 </div>
                 <div class="consultas-generales">
-                    <form id="formulario" method="post">
+                    <h1>Consultas</h1>
+                    <form id="formulario" class="formulario" method="post">
                         <div class="usuarios">
                             <label>Cedula</label>
                             <input id="cedula" type="text" placeholder="##-####-####" required>
@@ -62,8 +63,6 @@
                 </div>
             </div>
         </main>
-        <footer>
-            <iframe src="footer.html" type="text/html"></iframe>
-        </footer>
+        <footer></footer>
     </body>
 </html>

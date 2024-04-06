@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
 });
 
+//carga las especialidades de los doctores
 const cargarEspecialidades = () => {
     const espcialidades = JSON.parse(localStorage.getItem('especialidades'));
     var espcialidadesInnerHTML = `<option value="0">Seleccionar</option>`
@@ -33,6 +34,7 @@ const cargarEspecialidades = () => {
     document.getElementById("detalles-especialidad").innerHTML = espcialidadesInnerHTML;
 }
 
+//este metodo se llama cuando se selecciona una especialidad y se cargan los doctores que pertenecen a la misma
 const cargarMedicos = () => {
     const especialidad = document.getElementById("detalles-especialidad").value;
     const medicos = JSON.parse(localStorage.getItem("medicos")).filter(medico => medico.especialidad == especialidad);
@@ -44,6 +46,7 @@ const cargarMedicos = () => {
     document.getElementById("detalles-medico").innerHTML = medicosInnerHTML;
 } 
 
+//al seleccionar un doctor se cargan sus horas disponibles para ese dia
 const cargarHora = () => {
     const fecha = document.getElementById("detalles-fecha").value;
     const medico = document.getElementById("detalles-medico").value;
@@ -77,6 +80,8 @@ const cargarHora = () => {
     }
 }
 
+
+//se valida que la cita sea posible en caso de algun error en el formulario
 const validarCita = () => {
     const especialidad = document.getElementById("detalles-especialidad").value;
     const medico = document.getElementById("detalles-medico").value;
@@ -105,6 +110,7 @@ const validarCita = () => {
     }
 }
 
+//crea el objeto y lo almacena en localstorage
 const programarCita = () => {
     const { especialidad, medico, tipo, fecha, hora } = obtenerDatosFormulario();
     const usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
@@ -117,6 +123,7 @@ const programarCita = () => {
     limpiarCampos();
 }
 
+//obtiene datos del formulario
 const obtenerDatosFormulario = () => {
     const especialidad = document.getElementById("detalles-especialidad").value;
     const medico = document.getElementById("detalles-medico").value;
@@ -127,6 +134,7 @@ const obtenerDatosFormulario = () => {
     return { especialidad, medico, tipo, fecha, hora }
 }
 
+//limpia los campos del formulario
 const limpiarCampos = () => {
     document.getElementById("detalles-especialidad").value = '0';
     document.getElementById("detalles-medico").innerHTML = '';

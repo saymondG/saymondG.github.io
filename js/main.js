@@ -9,6 +9,7 @@ const carruselRotacion = (index) => {
   carruselManual(carruselIndex + index)
 }
 
+//metodo llamado desde carruselRotacion para cambiar la foto de manera manual.
 const carruselManual = (index) => {
   let imagenes = Array.from(document.getElementsByClassName("item-carrusel"));
   imagenes.forEach(imagen => {
@@ -24,6 +25,7 @@ const carruselManual = (index) => {
   imagenes[carruselIndex].style.display = "block"
 }
 
+//carrusel automarico el cual cambia de imagen cada 5 segundos
 const carruselAutomatico = () => {
   let imagenes = Array.from(document.getElementsByClassName("item-carrusel"));
   imagenes.forEach(imagen => {

@@ -63,6 +63,8 @@ document.addEventListener("DOMContentLoaded", ()=> {
     cargarDatos();
 });
 
+
+//este archivo se encarga unicamente de cargar los datos en caso que estos no se encuentren
 cargarDatos = () => {
     if (!localStorage.getItem('medicos')) {
       localStorage.setItem('medicos', JSON.stringify(medicos));

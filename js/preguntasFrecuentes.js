@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
         const pregunta = item.querySelector('.pregunta'); 
         const respuesta = item.querySelector('.respuesta');
            
+        //se agrega un evento para esucchar click en el div y asi poder mostrar o esconder las preguntas frecuentes a voluntad
         pregunta.addEventListener("click", function(event) {
             if (respuesta.style.display === "none") {
                 respuestas.forEach(respuesta =>respuesta.style.display = "none");
