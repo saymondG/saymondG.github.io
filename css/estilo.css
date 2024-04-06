@@ -1,3 +1,4 @@
+/*configuraciones generales de la pagina*/
 *{
     padding: 0;
     margin: 0;
@@ -5,25 +6,29 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/*configuracion del cuerpo*/
 body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    min-height: 100vh; 
+    min-height: 100vh; /*para que use el 100% de la pantalla que no ocupan el header ni el footer*/
 }
 
+/*posicion relativa para poder acomodar etiquetas de posicion absoluta*/
 .contenido {
     position: relative; 
     width: 90%;
 }
 
+/*estructura del main*/
 main {
     flex: 1;
     display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center; 
+    align-items: center;
 }
 
+/*configuraciones generales de header y footer*/
 header, footer {
     display: flex;
     justify-content: space-between;
@@ -34,31 +39,38 @@ header, footer {
 
 }
 
+/*tamanno del logo de la pagina*/
 header img, footer img {
     width: 75px;
     height: 75px;
 }
 
+/*configuracion de los botones para navegar por la pagina*/
 header a, footer a {
     color: white;
     text-decoration: none;
 }
 
+
+/*se le agrega una sombra al header para decorar*/
 header {
     background-color: white;
     box-shadow: 0 3px 7px #66CC99; 
 
 }
 
+/*se asgina el color de los enlaces por a parte del footer ya que estas son solo para el hedaer*/
 header a {
     color: #66CC99;
 }
 
+/*con esto se acomoda el logo con el nombre de la empresa*/
 header h1 {
     display: flex;
     align-items: center;
 }
 
+/*se comoda el menu en el header*/
 header nav {
     width: 65%;
     display: flex;
@@ -66,32 +78,25 @@ header nav {
     text-align: end;
 }
 
-header nav:first-child {
-    align-content: end;
-}
-
-
-
-header nav ul {
+header nav ul, footer nav ul {
     list-style: none;
-    padding: 0;
+    padding: 0em;
     margin-bottom: 1em;
 }
 
 header nav ul li {
     display: inline;
-    margin-right: 10px; /* Espacio entre elementos de navegación */
+    margin-right: 10px; 
+    
 }
 
-header nav ul li:last-child {
-    margin-right: 0; /* Eliminar margen derecho del último elemento */
-}
-
-header a:hover {
+header a:hover, footer a:hover {
     color: #fff;
     background-color: #66CC99;
 }
 
+
+/*se configura el carrusel para estar en el centro de la pantalla*/
 .carrusel {
     display: flex;
     flex-wrap: wrap; 
@@ -101,24 +106,28 @@ header a:hover {
 
 }
 
+/*cada imagen del carrusel va a ocuparun 75% del .carrusel para evitar que se vea muy grande y perder calidad*/
 .item-carrusel {
     width: 75%; 
     padding: 10px;
-    box-sizing: border-box; 
     text-align: center; 
 }
 
+/*las imagenes se definen a un tamaño predefinido para evitar que estas cambien de tamaño mientras se mueve el carrusel*/
 .item-carrusel img {
     width: 30em; 
     height: 30em;
     object-fit: cover;
 }
 
+/*titulo de cada imagen*/
 .item-carrusel p {
     background-color: #66CC99; 
     color: white;
 }
 
+/*se agreag un cuadro con posicion abosluta para dar una breve introduccion a la pgina*/
+/*se realiza de esta forma con el fin de dar estilo a la pagina*/
 .descripcion-inicio {
     position: absolute;
     bottom: 0; 
@@ -126,12 +135,11 @@ header a:hover {
     background-color: #66CC99; 
     padding: 20px;
     color: white;
-    width: 100%;
-    box-sizing: border-box; 
 }
 
 /* INICIO DE SESION */
 
+/*configuracion de los formularios vista en clase*/
 .formulario {
     width: 400px;
     margin: 0 auto;
@@ -145,6 +153,8 @@ header a:hover {
 
 .formulario input[ type="password" ],
 .formulario input[ type="text" ],
+.formulario input[ type="date" ],
+.formulario select,
 .formulario input[ type="email" ] {
     width: 100%;
     padding: 10px;
@@ -167,6 +177,8 @@ header a:hover {
     background-color: rgb(0, 178, 178);
 }
 
+
+/*las siguientes configuraciones es para darle estilo a las paginas que son de solo texto*/
 .cuadros {
     display: flex;
     flex-direction: row;
@@ -209,6 +221,82 @@ header a:hover {
 
 /* UTILIDADES */
 
+/*se utiliza para objetos que tienen que permcer ocultos hasta que el usuario los selecciones*/
 .oculto {
     display: none;
+}
+
+/*estilo de la pagina agendar citas*/
+.agendar-citas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/*configuracion del menu de ctias*/
+.menu-citas {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-citas button {
+    background-color: #66CC99;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.menu-citas button:hover {
+    background-color: rgb(0, 178, 178);
+}
+
+.menu-citas button {
+    margin-top: 1.5em;
+}
+
+#citas-modal {
+    position: absolute;
+    bottom: 0; 
+    left: 0; 
+    background-color: #66CC99; 
+    padding: 20px;
+    color: white;
+}
+
+#citas-modal button {
+    background-color: #66CC99;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#citas div {
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    width: 15em;
+    height: 3em;
+    cursor: pointer;
+    text-align: center;
+}
+
+.tabla {
+    display: flex;
+    flex-direction: column;
+}
+
+.preguntas-frecuentes .item {
+    background-color: #66CC99;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1em;
 }

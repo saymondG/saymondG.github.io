@@ -62,8 +62,8 @@ const cargarCalendario = (anio, mes, hoy) => {
                     cell.style.fontWeight = 'bold';
                     cell.style.backgroundColor = "#ffffcc"
                 }
-                if(misCitas.filter(cita => cita.fecha === formattedDate).length) {
-
+                if(misCitas && misCitas.filter(cita => cita.fecha === formattedDate).length) {
+                    cell.style.backgroundColor = "green";
                     //en caso de que existan citas ese dia vamos a comprar el estado de la cita para pintar el color de la casilla segun el estado.
                     //rojo = canelada
                     //verde = medico y paciente confirmaron la cita
@@ -77,7 +77,11 @@ const cargarCalendario = (anio, mes, hoy) => {
                         misCitas.forEach(cita => {
                             const nuevaCita = document.createElement('div');
                             nuevaCita.style.backgroundColor = "yellow"
-                            nuevaCita.textContent = 'Nueva cita';
+
+                            const hora = JSON.parse(localStorage.getItem('horas')).filter(hora => hora.id == cita.hora)[0];
+                            const especialidad =  JSON.parse(localStorage.getItem('especialidades')).filter(especialidad => especialidad.id == cita.especialidad)[0];
+
+                            nuevaCita.textContent = especialidad.nombre + " " +hora.hora;
                             if(cita.cancelado) {
                                 nuevaCita.style.backgroundColor = "red";
                             }
@@ -106,6 +110,7 @@ const abrirModal = (cita) => {
 
     //cargamos el div vacio del modal y cremos los botones
     const citas = document.getElementById('citas-modal');
+    citas.style.display = "block";
     citas.innerHTML = "";
     const botonConfirmar = document.createElement('button');
     const botonCancelar = document.createElement('button');
@@ -125,6 +130,7 @@ const abrirModal = (cita) => {
     //configuramos sun comportamiento
     botonCerrar.addEventListener('click', function(){
         citas.innerHTML = '';
+        citas.style.display = 'none';
     });
 
 
@@ -137,6 +143,7 @@ const abrirModal = (cita) => {
         citasLS = citasLS.replace(citaAntigua, citaNueva)
         localStorage.setItem('citas', citasLS)
         citas.innerHTML = '';
+        citas.style.display = 'none';
     });
 
     botonConfirmar.addEventListener('click',function(){
@@ -147,5 +154,6 @@ const abrirModal = (cita) => {
         citasLS = citasLS.replace(citaAntigua, citaNueva)
         localStorage.setItem('citas', citasLS)
         citas.innerHTML = '';
+        citas.style.display = 'none';
     });
 }

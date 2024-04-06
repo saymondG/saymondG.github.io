@@ -115,7 +115,7 @@ const programarCita = () => {
     const { especialidad, medico, tipo, fecha, hora } = obtenerDatosFormulario();
     const usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
 
-    const cita = {paciente: usuario.cedula, medico: medico, espcialidad: especialidad, tipo: tipo, fecha: fecha, hora: hora, confirmacionMedico: false, confirmacionPaciente: false, cancelado: false, completada: false}
+    const cita = {paciente: usuario.cedula, medico: medico, especialidad: especialidad, tipo: tipo, fecha: fecha, hora: hora, confirmacionMedico: false, confirmacionPaciente: false, cancelado: false, completada: false}
 
     var citas = JSON.parse(localStorage.getItem('citass'));
     citas ? citas.push(usuario) : citas = [ cita ];

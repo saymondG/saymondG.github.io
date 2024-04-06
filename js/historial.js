@@ -26,7 +26,7 @@ const cargarHistorial = () => {
         const citasFiltradas = citas.filter(cita => cita.paciente == usuarioActivo.cedula);
 
         citasFiltradas.forEach(cita => {
-            const especialidad = JSON.parse(localStorage.getItem('especialidades')).filter(especialidad => especialidad.id == cita.espcialidad)[0];
+            const especialidad = JSON.parse(localStorage.getItem('especialidades')).filter(especialidad => especialidad.id == cita.especialidad)[0];
             const medico = JSON.parse(localStorage.getItem("medicos")).filter(medico => medico.identificacion == cita.medico)[0];
             const hora = JSON.parse(localStorage.getItem("horas")).filter(hora => hora.id == cita.hora)[0];
 
