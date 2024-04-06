@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clinica Arbol de Seda</title>
+        <link rel="stylesheet" type="text/css" href="../css/estilo.css">
+        <script src="../js/agendaCitas.js"></script>
+        <script src="../js/historial.js"></script>
+        <script src="../js/calendario.js"></script>
+        <script src="../js/programarCitas.js"></script>
+    </head>
+    <body>
+        <header>
+            <iframe src="header.html" type="text/html"></iframe>
+        </header>
+        <main>
+            <div class="contenido agendar-citas">
+                <div class="menu-citas">
+                    <h1>Menu de citas</h1>
+                    <button id="botonProgramarCita">Programar</button>
+                    <button id="botonCalendario">Calendario</button>
+                    <button id="botonHistorial">Historial</button>
+                </div>
+                <div class="secciones-citas">
+                    <div id="bienvenida" class="seccionCitas">
+                        <h1>Bienvenido al menu de gestion de citas</h1>
+                    </div>
+                    <div id="programacionCitas" class="seccionCitas">
+                        <form id="formulario" method="post">
+                            <h1>Programacion de citas</h1>
+                            <h3>Especialidad</h3>
+                            <select id="detalles-especialidad" onchange="cargarMedicos()"></select>
+                            <h3>Medico</h3>
+                            <select id="detalles-medico"></select>
+                            <h3>Tipo</h3>
+                            <select id="detalles-tipo">
+                                <option value="0">Seleccionar</option>
+                                <option value="Consulta Médica General">Consulta Médica General</option>
+                                <option value="Chequeo de Salud">Chequeo de Salud</option>
+                                <option value="Citas de Seguimiento">Citas de Seguimiento</option>
+                                <option value="Citas Especializadas">Citas Especializadas</option>
+                            </select>
+                            <h3>Fecha</h3>
+                            <input id="detalles-fecha" type="date" onchange="cargarHora()">
+                            <h3>hora-cita</h3>
+                            <select id="detalles-hora"></select>
+                            <div>
+                                <input id="botonProgramar" type="submit" value="Programar">
+                            </div> 
+                        </form>
+                    </div>
+                    <div id="calendario" class="seccionCitas">
+                        <h1>Calendario</h1>
+                        <table id="calendario-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Domingo</th>
+                                    <th>Lunes</th>
+                                    <th>Martes</th>
+                                    <th>Miercoles</th>
+                                    <th>Jueves</th>
+                                    <th>Viernes</th>
+                                    <th>Sabado</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div id="historial" class="seccionCitas">
+                        <h1>Hisotrial</h1>
+                        <table id="tabla-historial">
+                            <thead>
+                                <tr>
+                                    <th>Especialidad</th>
+                                    <th>Medico</th>
+                                    <th>Fecha</th>
+                                    <th>Hora</th>
+                                    <th>Confirmacion Medico</th>
+                                    <th>Confirmacion Paciente</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div id="confirmacion" class="seccionCitas"><h1>Confirmacion</h1></div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <iframe src="footer.html" type="text/html"></iframe>
+        </footer>
+    </body>
+</html>

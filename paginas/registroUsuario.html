@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clinica Arbol de Seda</title>
+        <link rel="stylesheet" type="text/css" href="../css/estilo.css">
+        <script src="../js/registroUsuario.js"></script>
+    </head>
+    <body>
+        <header>
+            <iframe src="header.html" type="text/html"></iframe>
+        </header>
+        <main>
+            <div class="contenido">
+                <div class="formulario">
+                    <h2>Registro Usuario</h2>
+                    <form id="formulario" method="post">
+                        <div class="usuarios">
+                            <label>Cedula</label>
+                            <input id="cedula" type="text" placeholder="##-####-####" required>
+                        </div>
+                        <div class="usuarios">
+                            <label>Nombre</label>
+                            <input id="nombre" type="text" maxlength="20" placeholder="Nombre" required>
+                        </div>
+                        <div class="usuarios">
+                            <label>Apellidos</label>
+                            <input id="apellidos" type="text" maxlength="30" placeholder="Apellidos" required>
+                        </div>
+                        <div class="usuarios">
+                            <label>Numero Celular</label>
+                            <input id="celular" type="text" placeholder="####-####" required>
+                        </div>
+                        <div class="usuarios">
+                            <label>Correo</label>
+                            <input id="correo" type="email" placeholder="##@####.###" required>
+                        </div>
+                        <div class="usuarios">
+                            <label>Contraseña</label>
+                            <input id="contrasenna" type="password" placeholder="Contraseña" required>
+                        </div>
+                        <div class="usuarios">
+                            <label>Confirmar Contraseña</label>
+                            <input id="confirmarContrasenna" type="password" placeholder="Confirmar contraseña" required>
+                        </div>
+                        <div>
+                            <input id="botonRegistrar" type="submit" value="Registrar">
+                        </div> 
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <iframe src="footer.html" type="text/html"></iframe>
+        </footer>
+    </body>
+</html>

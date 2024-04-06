@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clinica Arbol de Seda</title>
+        <link rel="stylesheet" type="text/css" href="../css/estilo.css">
+        <script src="../js/busquedaMedicos.js"></script>
+    </head>
+    <body>
+        <header>
+            <iframe src="header.html" type="text/html"></iframe>
+        </header>
+        <main>
+            <div class="contenido">
+                <h1>Busqueda de Medicos</h1>
+                <select id="categoriaBusqueda">
+                    <option value="nombre">Nombre</option>
+                    <option value="especialidad">Especialidad</option>
+                    <option value="ubicacion">Ubicacion</option>
+                    <option value="identificacion">Identificacion</option>
+                </select>
+                <input id="busquedaMedico" type="text" placeholder="Ingrese el dato a buscar">
+                <button id="botonBuscarMedico" onclick="buscarMedicos()">Buscar</button>
+                <table id="tablaMedicos">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Especialidad</th>
+                            <th>Ubicacion</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTabla"></tbody>
+                </table>
+            </div>
+        </main>
+        <footer>
+            <iframe src="footer.html" type="text/html"></iframe>
+        </footer>
+    </body>
+</html>

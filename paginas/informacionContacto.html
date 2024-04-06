@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clinica Arbol de Seda</title>
+        <link rel="stylesheet" type="text/css" href="../css/estilo.css">
+        <script src="../js/informacionContacto.js"></script>
+    </head>
+    <body>
+        <header>
+            <iframe src="header.html" type="text/html"></iframe>
+        </header>
+        <main>
+            <div class="contenido">
+                <div class="contacto">
+                    <h1>Contactanos</h1>
+                    <p>Detalles de Contacto:</p>
+                    <p>Dirección: Laboratorios de informatica, Sede de Atlántico, Provincia de Cartago, Turrialba.</p>
+                    <p>Teléfono: +(506) 9875-4567</p>
+                    <p>Correo Electrónico: info@clinicadearbol.com</p>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d982.5948347923202!2d-83.67234781029427!3d9.902329917168455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2scr!4v1711870511827!5m2!1ses-419!2scr"
+                        width="600" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="consultas-generales">
+                    <form id="formulario" method="post">
+                        <div class="usuarios">
+                            <label>Cedula</label>
+                            <input id="cedula" type="text" placeholder="##-####-####" required>
+                        </div>
+                        <div class="consultas">
+                            <label>Nombre</label>
+                            <input id="nombre" type="text" maxlength="20" placeholder="Nombre" required>
+                        </div>
+                        <div class="consultas">
+                            <label>Apellidos</label>
+                            <input id="apellidos" type="text" maxlength="30" placeholder="Apellidos" required>
+                        </div>
+                        <div class="consultas">
+                            <label>Numero Celular</label>
+                            <input id="celular" type="text" placeholder="####-####" required>
+                        </div>
+                        <div class="consultas">
+                            <label>Correo</label>
+                            <input id="correo" type="email" placeholder="##@####.###" required>
+                        </div>
+                        <div class="consultas">
+                            <label>Consulta</label>
+                            <textarea id="consulta" rows="4" cols="50" required></textarea>
+                        </div>
+                        <div>
+                            <input id="botonEnviarConsulta" type="submit" value="Enviar">
+                        </div> 
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <iframe src="footer.html" type="text/html"></iframe>
+        </footer>
+    </body>
+</html>

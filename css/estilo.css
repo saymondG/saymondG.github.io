@@ -1,0 +1,386 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+
+/*HEADER N FOOTER*/
+
+iframe {
+    width: 100%;
+    border-width: 0;
+}
+
+header {
+    display: flex;
+    /* background-color: #66CC99; */
+    height: 6em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    /* background-color: #66CC99; */
+    /* height: 100px; */
+    flex-grow: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    
+}
+
+.header > img {
+    width: 50px;
+    height: 50px;
+}
+
+.header a {
+    text-decoration: none;
+    color: #66CC99;
+}
+
+.header h1 {
+    width: 35%;
+}
+
+.header nav:first-child {
+    align-content: end;
+}
+
+.header nav {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+}
+
+.header nav ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1em;
+}
+
+.header nav ul li {
+    display: inline;
+    margin-right: 10px; /* Espacio entre elementos de navegación */
+}
+
+.header nav ul li:last-child {
+    margin-right: 0; /* Eliminar margen derecho del último elemento */
+}
+
+.header a {
+    /* display: block; */
+    text-align: center;
+    color: #66CC99;
+    margin-top: 0.5em;
+    margin-bottom: 2em;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.header a:hover {
+    color: #fff;
+    background-color: #66CC99;
+}
+
+
+
+/* -------------------------------------------------------- */
+
+footer {
+    display: flex;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    flex-grow: 1;
+    padding: 1em;
+    align-items: center;
+}
+
+.footer > div {
+    flex: 1;
+    padding: 1em;
+}
+
+.footer > img {
+    width: 100px;
+    height: 100px;
+}
+
+.enlaces-interes {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer nav ul {
+    list-style: none;
+}
+
+.footer a {
+    display: block;
+    text-align: center;
+    color: #fff;
+    margin-top: 0.5em;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #333;
+    background-color: #dcdcdc;
+}
+
+
+/* CONTENIDO DE LA PAGINA */
+main {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+.contenido {
+    display: flex;
+    flex-direction: column;
+    background-color: #F2F2F2;
+    flex-grow: 1;
+}
+
+/* INDEX */
+
+.carrusel {
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+}
+
+.carrusel .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #66CC99;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.carrusel .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.carrusel .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.item-carrusel {
+    display: none;
+}
+
+.item-carrusel img {
+    height: 500px;
+}
+
+.item-carrusel p {
+    /* z-index: 1;
+    position: fixed; */
+}
+
+.centrado {
+    justify-content: center;
+    align-items: center;
+}
+
+/* .carrusel {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+
+    img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .imagen-carrusel {
+        display: none;
+    }
+
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+  
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+  
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+    
+    .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+    
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+    
+    .active, .dot:hover {
+        background-color: #717171;
+    }
+    
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+    
+    @keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+    }
+} */
+
+.preguntas-frecuentes {
+    padding: 2em;
+
+    .respuesta {
+        display: none;
+    }
+}
+
+.visor-pdf {
+    padding: 2em;
+}
+
+.frame {
+    display: none;
+}
+/* INICIO DE SESION */
+
+.formulario {
+    width: 400px;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0, 0, 0.1);
+    padding: 20px;
+
+    #registroUsuario {
+        display: none;
+    }
+
+    #inicioSesion {
+        display: none;
+    }
+}
+
+.formulario input[ type="password" ],
+.formulario input[ type="text" ],
+.formulario input[ type="email" ] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #7e7e7e;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.formulario input[ type="submit" ] {
+    background-color: rgb(0, 73, 83);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.formulario input[ type="submit" ]:hover {
+    background-color: rgb(0, 178, 178);
+}  
+
+
+/* Seccion de citas */
+
+.agendar-citas {
+    flex-direction: row;
+
+    .menu-citas {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .secciones-citas {
+        flex-grow: 1;
+    }
+
+    .seccionCitas {
+        display: none;
+    }
+}
+
+/*UTILIDADES*/
+
+.oculto {
+    display: none;
+}
+
+
